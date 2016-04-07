@@ -1,0 +1,69 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="index" %>
+<%@ Register Src="top.ascx" TagName="top" TagPrefix="uc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>网上书店</title>
+    <link href="css/idnex.css" rel="stylesheet" type="text/css" />
+
+    <style type="text/css">
+        .style1
+        {
+            width: 1200px;
+            height: 13px;
+        }
+    </style>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="main">
+
+ <div class="ma1">
+   <table style="width:1200px">
+       <tr>
+           <td style="width:1200px; height: 61px" valign="top">
+               <uc1:top ID="Top1" runat="server" />
+           </td>
+       </tr>
+            <tr>
+                <td style="width:1200px; height: 230px; border-right: #e2e5e6 0.1mm solid; border-top: #e2e5e6 0.1mm solid; border-left: #e2e5e6 0.1mm solid; border-bottom: #e2e5e6 0.1mm solid;" valign="top" align="center" >
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+            <div style="text-align: left">
+               </div>
+        </asp:contentplaceholder>
+                    </td>
+            </tr>
+        </table>
+   <table style="width:1200px">
+       <tr>
+           <td align="left" class="style1" style="font-size: 20px; color: #ffffff;
+               background-color: #3399cc; background-image: url('images/main_10.jpg');">
+               <asp:DataList ID="dlLinks" runat="server" RepeatColumns="15" RepeatDirection="Horizontal"
+                   Width="1200px">
+                   <ItemTemplate>
+                       <a href='<%#Eval("Url")%>' target="_blank">[<%#Eval("Name")%>]</a>
+                   </ItemTemplate>
+               </asp:DataList></td>
+       </tr>
+        <tr>
+            <td style="width:1200px; height: 85px; font-size: 20px; color: #ffffff; background-image: url(images/main_10.jpg);"class="tbx" align="center">
+                欢迎光临网上书店<br />
+                <a href="admin/Login.aspx" target=_parent style="color: #ff0066">管理员登陆</a></td>
+        </tr>
+       
+      
+         
+    </table>
+</div>
+</div>
+
+
+    </form>
+</body>
+</html>
+
